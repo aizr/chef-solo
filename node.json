@@ -1,0 +1,3 @@
+{
+  "run_list": ["recipe[networking_basic]", "recipe[nginx]"]
+}

@@ -60,6 +60,10 @@ file "/home/deployer/example/index.html" do
   content "<h1>Hello</h1>"
 end
 
-template "/etc/nginx/sites-enabled/example" do
+template "/etc/nginx/sites-available/example" do
   source "example-site.erb"
+end
+
+link "/etc/nginx/sites-enabled/example" do
+  to "/etc/nginx/sites-available/example"
 end

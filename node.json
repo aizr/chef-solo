@@ -2,7 +2,6 @@
   "user": {
     "name": "deployer",
     "password": "$1$mfiBUi8F$0HdIS6iIttKW8pgkafuaB0",
-    "ls_color": true
   },
-  "run_list": ["recipe[nginx]"]
+  "run_list": ["recipe[main]","recipe[nginx]"]
 }

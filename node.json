@@ -1,7 +1,7 @@
 {
   "user": {
     "name": "deployer",
-    "password": "$1$mfiBUi8F$0HdIS6iIttKW8pgkafuaB0",
+    "password": "$1$mfiBUi8F$0HdIS6iIttKW8pgkafuaB0"
   },
-  "run_list": ["recipe[main]","recipe[nginx]"]
+  "run_list": ["recipe[nginx]","recipe[main]"]
 }

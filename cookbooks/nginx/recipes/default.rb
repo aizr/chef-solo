@@ -50,20 +50,3 @@ service 'nginx' do
   supports :status => true, :restart => true, :reload => true
   action :start
 end
-
-directory "/home/deployer/example" do
-  owner "deployer"
-end
-
-file "/home/deployer/example/index.html" do
-  owner "deployer"
-  content "<h1>Hello</h1>"
-end
-
-template "/etc/nginx/sites-available/example" do
-  source "example-site.erb"
-end
-
-link "/etc/nginx/sites-enabled/example" do
-  to "/etc/nginx/sites-available/example"
-end

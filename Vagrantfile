@@ -13,8 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "bootstrap.sh"
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
-    chef.add_recipe "main"
-    chef.add_recipe "nginx"
+    chef.json = JSON.parse(Pathname(__FILE__).dirname.join('node.json').read)
   end
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.

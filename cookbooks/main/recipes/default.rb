@@ -27,6 +27,8 @@ template "/etc/nginx/sites-available/example" do
   source "example-site.erb"
 end
 
-link "/etc/nginx/sites-enabled/example" do
-  to "/etc/nginx/sites-av/example"
+file "#{node[:nginx][:dir]}/sites-available/example" do
+  content "server { root /home/#{node[:user][:name]}/example; }"
 end
+
+nginx_site "example"
